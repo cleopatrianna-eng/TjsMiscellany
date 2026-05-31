@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Spectral:wght@400;700&family=IM+Fell+English:ital@0;1&family=Raleway:wght@300;400;500&display=swap');
 
 :root {
-  --ivory: #f8f4ed;
-  --cream: #f0e9d8;
-  --gold: #b8860b;
-  --gold-light: #d4a843;
-  --gold-pale: #e8d5a3;
-  --forest: #2d4a3e;
-  --forest-deep: #1a2e28;
-  --forest-mid: #3d6354;
-  --burgundy: #6b2737;
-  --rust: #8b4a2a;
-  --ink: #1c1a16;
-  --ink-soft: #3a3630;
-  --mist: #c5bba8;
-  --petal: #d4b896;
+  --ivory: #f5f5f0;
+  --cream: #edeae2;
+  --gold: #9c7c38;
+  --gold-light: #c4a35a;
+  --gold-pale: #ddc99a;
+  --forest: #1e3d35;
+  --forest-deep: #0f2420;
+  --forest-mid: #2d5a4e;
+  --burgundy: #7a2d3e;
+  --rust: #9e5a3a;
+  --ink: #18181b;
+  --ink-soft: #3f3f46;
+  --mist: #b8b5ae;
+  --petal: #c9b99a;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,7 +84,7 @@ body::before {
 }
 
 .masthead-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: clamp(2rem, 6vw, 4.5rem);
   color: var(--gold-light);
   letter-spacing: 0.15em;
@@ -209,7 +209,7 @@ body::before {
 }
 
 .section-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: clamp(1.5rem, 4vw, 2.8rem);
   color: var(--forest-deep);
   letter-spacing: 0.05em;
@@ -268,7 +268,7 @@ body::before {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 8rem;
   color: var(--gold-pale);
   line-height: 1;
@@ -285,7 +285,7 @@ body::before {
 }
 
 .hero-heading {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: clamp(1.4rem, 3vw, 2.2rem);
   color: var(--forest-deep);
   line-height: 1.3;
@@ -428,7 +428,7 @@ body::before {
 }
 
 .card-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 1rem;
   color: var(--forest-deep);
   line-height: 1.4;
@@ -526,7 +526,7 @@ body::before {
 }
 
 .featured-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: clamp(1.2rem, 2.5vw, 1.9rem);
   color: var(--gold-pale);
   line-height: 1.3;
@@ -586,7 +586,7 @@ body::before {
 }
 
 .about-name {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 1.1rem;
   color: var(--forest-deep);
   text-align: center;
@@ -604,7 +604,7 @@ body::before {
 }
 
 .about-content h2 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 1.5rem;
   color: var(--forest-deep);
   margin-bottom: 1.5rem;
@@ -619,7 +619,7 @@ body::before {
 }
 
 .about-content p:first-of-type::first-letter {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 4rem;
   float: left;
   line-height: 0.75;
@@ -698,7 +698,7 @@ body::before {
 }
 
 .item-name {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 0.95rem;
   color: var(--forest-deep);
   letter-spacing: 0.03em;
@@ -771,7 +771,7 @@ body::before {
 .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.1em; }
 
 .review-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 1rem;
   color: var(--forest-deep);
   line-height: 1.4;
@@ -852,7 +852,7 @@ footer::before {
 }
 
 .footer-col h4 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   color: var(--gold-light);
@@ -906,7 +906,7 @@ footer::before {
 .page-hero-inner { position: relative; z-index: 1; }
 
 .page-hero h1 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Spectral', serif;
   font-size: clamp(1.8rem, 5vw, 3.5rem);
   color: var(--gold-light);
   letter-spacing: 0.1em;
@@ -1013,3 +1013,5 @@ footer::before {
   .interests-grid { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: 1fr; }
 }
+
+
