@@ -1,0 +1,147 @@
+Looking at your code, the main issue is the rootRelative path calculation logic — it's using Nunjucks syntax but the split/length filter chain isn't quite right for Eleventy. Here's the cleaned-up version:
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Tj's Miscellany</title>
+  <meta name="description" content="About Tj — editor and writer at Tj&#39;s Miscellany, endless distractions and procrastinations.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
+    <h1 class="masthead-title">
+      <a href="/" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
+    </h1>
+    <p class="masthead-subtitle">Endless distractions and procrastinations</p>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="/" >Home</a>
+    <span class="nav-sep">✦</span>
+    <a href="/about/" class="active">About</a>
+    <span class="nav-sep">✦</span>
+    <a href="/journal/" >Journal</a>
+    <span class="nav-sep">✦</span>
+    <a href="/books/" >Books</a>
+    <span class="nav-sep">✦</span>
+    <a href="/art/" >Art</a>
+    <span class="nav-sep">✦</span>
+    <a href="/items/" >The Emporium</a>
+  </div>
+</nav>
+
+<main>
+  
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">The Editor</p>
+    <h1>About Tj</h1>
+    <p>Middle aged, easily distracted, constantly curious</p>
+  </div>
+</div>
+
+<div class="page-wrapper">
+  <div class="about-layout">
+
+    <aside class="about-portrait animate-up delay-1">
+      <div class="about-portrait-frame">
+        <img src="/images/magnolia-blossom.jpg" alt="Photo of magnolias">
+      </div>
+      <p class="about-name">Tj</p>
+      <p class="about-title-tag">Editor & Chief Enthusiast</p>
+
+      <div style="margin-top:2.5rem;padding:1.5rem;background:var(--cream);border:1px solid var(--gold-pale);">
+        <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Currently Reading</p>
+        <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--ink-soft);line-height:1.6;">The Wimmy Road Boyz</p>
+        <div class="vine-divider" style="margin:1rem 0;font-size:0.9rem;letter-spacing:0.3rem;"></div>
+        <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Currently Listening</p>
+        <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--ink-soft);line-height:1.6;">Stray Kids</p>
+        <div class="vine-divider" style="margin:1rem 0;font-size:0.9rem;letter-spacing:0.3rem;"></div>
+        <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Location</p>
+        <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--ink-soft);">Manchester, England</p>
+      </div>
+    </aside>
+
+    <article class="about-content animate-up delay-2">
+      <h2>The Writer at the Desk</h2>
+
+      <p>Welcome to Tj's Miscellany — a corner of the internet devoted to the things I find my brain constantly thinking about.</p>
+
+      <p>I am not a writer nor an editor. For years I have worked in offices, in data of all things — first as an analyst and now a manager, but I have a lot of interests beyond my work. Books, art, gardening, history, architecture, science, design...my brain is never not thinking and I'd like to think I can give it something better to do than doomscroll and watch K-Dramas.</p>
+
+      <div class="pull-quote">
+        <p>"I write about the things that interest me. They may not last as an interest, they still be something I go back to in 20 years. Who Knows?"</p>
+      </div>
+
+      <p>This is my attempt to learn how to create something of interest (if only to me) and use github and claude (as a generator of code - not art and literature!) — I'll only write and share what I actually want to and probably not very often - if at all. I've a very bad habit of losing interest in things, let's see if this one lasts.</p>
+
+      <p>You'll find book reviews here that don't waffle — I will share what I liked and why, not literary critiques - there's plenty of better people out there already doing that (I'll share them as well). You'll find art writing that will shift from great masters i've seen down to awesome local artists I find when out and about. You'll find essays about all manner of gubbins. And in the Emporium, you'll find things I have bought and can confidently say I thought were worth it. These aren't sponsored or even affiliated at the moment so no benefit to me of sharing other than the incurable belief that my opinion is worth something sometimes.</p>
+
+      <p>I publish when I have something worth saying, which means irregularly. I have no newsletter nor social media at this point - let's see where we get to but I make no promises.</p>
+
+      <h2 style="margin-top:3rem;">Particular Enthusiasms</h2>
+
+      <div class="interests-grid">
+        <div class="interest-item">All types of Literature</div>
+        <div class="interest-item">Arts & Crafts</div>
+        <div class="interest-item">Illustration</div>
+        <div class="interest-item">Design</div>
+        <div class="interest-item">Stationery</div>
+        <div class="interest-item">Gardening</div>
+        <div class="interest-item">Science and computing</div>
+        <div class="interest-item">History</div>
+        <div class="interest-item">Deep Travel</div>
+        <div class="interest-item">Metal, Punk and Indie music, K-Pop (as long as it's fast), Meatloaf, musicals</div>
+      </div>
+
+      <div style="margin-top:3rem;padding:2rem;background:var(--forest-deep);color:var(--gold-pale);">
+      </div>
+
+    </article>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
+      <p class="footer-tagline">Pointless meanderings</p>
+      <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the curiosities of life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Tj</a></li>
+        <li><a href="/journal/">Journal</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/art/">Art</a></li>
+        <li><a href="/items/">The Emporium</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Goodreads</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Tj's Miscellany &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Made with intention
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

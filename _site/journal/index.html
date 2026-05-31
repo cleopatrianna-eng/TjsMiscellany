@@ -1,0 +1,104 @@
+Looking at your code, the main issue is the rootRelative path calculation logic — it's using Nunjucks syntax but the split/length filter chain isn't quite right for Eleventy. Here's the cleaned-up version:
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal — Tj's Miscellany</title>
+  <meta name="description" content="An independent online magazine devoted to literature, the visual arts, and the curiosities of life.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
+    <h1 class="masthead-title">
+      <a href="/" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
+    </h1>
+    <p class="masthead-subtitle">Endless distractions and procrastinations</p>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="/" >Home</a>
+    <span class="nav-sep">✦</span>
+    <a href="/about/" >About</a>
+    <span class="nav-sep">✦</span>
+    <a href="/journal/" class="active">Journal</a>
+    <span class="nav-sep">✦</span>
+    <a href="/books/" >Books</a>
+    <span class="nav-sep">✦</span>
+    <a href="/art/" >Art</a>
+    <span class="nav-sep">✦</span>
+    <a href="/items/" >The Emporium</a>
+  </div>
+</nav>
+
+<main>
+  
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="section-eyebrow">Writings</p>
+    <h1>The Journal</h1>
+    <p>Essays, reflections, and dispatches from a life lived among books</p>
+  </div>
+</div>
+
+<div class="page-wrapper">
+  <div class="card-grid">
+    
+    <article class="card">
+      <div class="card-image">
+        <img src="/images/cat_painting_amsterdam.jpg" alt="Comedy in Art">
+        <span class="card-tag">Essay</span>
+      </div>
+      <div class="card-body">
+        <p class="card-date">Sun May 31 2026 01:00:00 GMT+0100 (British Summer Time)</p>
+        <h3 class="card-title">Comedy in Art</h3>
+        <p class="card-excerpt">Not all Art has to be serious.</p>
+        <a href="/posts/comedy_in_art/" class="card-link">Continue Reading →</a>
+      </div>
+    </article>
+    
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
+      <p class="footer-tagline">Pointless meanderings</p>
+      <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the curiosities of life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Tj</a></li>
+        <li><a href="/journal/">Journal</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/art/">Art</a></li>
+        <li><a href="/items/">The Emporium</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Goodreads</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Tj's Miscellany &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Made with intention
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

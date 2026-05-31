@@ -1,0 +1,267 @@
+Looking at your code, the main issue is the rootRelative path calculation logic — it's using Nunjucks syntax but the split/length filter chain isn't quite right for Eleventy. Here's the cleaned-up version:
+html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Emporium — Tj's Miscellany</title>
+  <meta name="description" content="A curated selection of books, stationery, and objects of lasting beauty from Tj&#39;s Miscellany.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
+    <h1 class="masthead-title">
+      <a href="/" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
+    </h1>
+    <p class="masthead-subtitle">Endless distractions and procrastinations</p>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="/" >Home</a>
+    <span class="nav-sep">✦</span>
+    <a href="/about/" >About</a>
+    <span class="nav-sep">✦</span>
+    <a href="/journal/" >Journal</a>
+    <span class="nav-sep">✦</span>
+    <a href="/books/" >Books</a>
+    <span class="nav-sep">✦</span>
+    <a href="/art/" >Art</a>
+    <span class="nav-sep">✦</span>
+    <a href="/items/" class="active">The Emporium</a>
+  </div>
+</nav>
+
+<main>
+  
+<style>
+  .emporium-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.5rem 0 1rem;
+  }
+  .emporium-intro p {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3.5rem 0 2rem;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-pale));
+  }
+  .section-divider::after {
+    background: linear-gradient(90deg, var(--gold-pale), transparent);
+  }
+  .section-divider span {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.85rem;
+    color: var(--forest);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+  .badge-new {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--burgundy);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+  }
+  .badge-favourite {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gold);
+    color: var(--forest-deep);
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+  }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Curated Objects</p>
+    <h1>The Emporium</h1>
+    <p>Things worth owning — beautiful, useful, and lasting</p>
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <div class="emporium-intro">
+    <p>Everything here is something I have bought, used, and can honestly recommend. No sponsored placements. No algorithmic suggestions. Only things that have earned a permanent place on my desk, shelf, or in my daily life.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="stationery">Stationery</button>
+    <button class="filter-btn" data-filter="books">Books & Editions</button>
+    <button class="filter-btn" data-filter="objects">Objects</button>
+    <button class="filter-btn" data-filter="paper">Paper Goods</button>
+  </div>
+
+  <div class="section-divider"><span>Stationery</span></div>
+
+  <div class="items-grid">
+
+    <div class="item-card" data-category="stationery">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item1/500/400" alt="Fountain pen">
+        <span class="badge-favourite">Favourite</span>
+      </div>
+      <div class="item-body">
+        <p class="item-category">Writing Instruments</p>
+        <h3 class="item-name">Pilot Custom 74 Fountain Pen</h3>
+        <p class="item-desc">The pen I reach for every day, without exception. The fine nib is precisely calibrated; the balance in the hand is near perfect. Japanese engineering at its most considered.</p>
+        <p class="item-price">£95 — £120</p>
+      </div>
+    </div>
+
+    <div class="item-card" data-category="stationery">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item2/500/400" alt="Notebook">
+        <span class="badge-new">New Find</span>
+      </div>
+      <div class="item-body">
+        <p class="item-category">Notebooks</p>
+        <h3 class="item-name">Leuchtturm1917 A5 Dotted</h3>
+        <p class="item-desc">I have tried many notebooks. This is the one I always return to. The paper takes ink beautifully without feathering; the dot grid is unobtrusive enough to forget it's there.</p>
+        <p class="item-price">£18 — £22</p>
+      </div>
+    </div>
+
+    <div class="item-card" data-category="stationery">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item3/500/400" alt="Ink">
+      </div>
+      <div class="item-body">
+        <p class="item-category">Ink</p>
+        <h3 class="item-name">Diamine Oxblood Fountain Pen Ink</h3>
+        <p class="item-desc">A deep burgundy-brown with wonderful character — it reads as dark in dim light and reveals its redness in sunlight. Ideal for correspondence that should look as though it was written with intention.</p>
+        <p class="item-price">£8</p>
+      </div>
+    </div>
+
+    <div class="item-card" data-category="stationery">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item4/500/400" alt="Pencil">
+      </div>
+      <div class="item-body">
+        <p class="item-category">Pencils</p>
+        <h3 class="item-name">Blackwing 602 Pencils</h3>
+        <p class="item-desc">The pencil of Steinbeck and Nabokov and a great many other writers who cared about such things. The semi-firm lead is perfect for prose drafts; the eraser is unmatched. A luxury with a case.</p>
+        <p class="item-price">£22 for 12</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"><span>Books &amp; Editions</span></div>
+
+  <div class="items-grid">
+
+    <div class="item-card" data-category="books">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item5/500/400" alt="Folio Society">
+        <span class="badge-favourite">Favourite</span>
+      </div>
+      <div class="item-body">
+        <p class="item-category">Fine Editions</p>
+        <h3 class="item-name">Folio Society Selected Editions</h3>
+        <p class="item-desc">I buy Folio editions selectively, for books I expect to read more than once. The physical quality — paper, binding, illustration — is consistently superb. Their Middlemarch and Collected Poems of Keats are particularly fine.</p>
+        <p class="item-price">£30 — £100+</p>
+      </div>
+    </div>
+
+    <div class="item-card" data-category="books">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item6/500/400" alt="Art book">
+        <span class="badge-new">New</span>
+      </div>
+      <div class="item-body">
+        <p class="item-category">Art Books</p>
+        <h3 class="item-name">The Art of the Book: Illuminated Manuscripts</h3>
+        <p class="item-desc">Published by Thames & Hudson, this survey of medieval manuscript illumination is itself a beautiful object — large format, excellent colour reproduction, and scholarship that never loses sight of the images.</p>
+        <p class="item-price">£55</p>
+      </div>
+    </div>
+
+    <div class="item-card" data-category="books">
+      <div class="item-image">
+        <img src="https://picsum.photos/seed/item7/500/400" alt="Poetry">
+      </div>
+      <div class="item-body">
+        <p class="item-category">Poetry</p>
+        <h3 class="item-name">Faber Poetry Classics Series</h3>
+        <p class="item-desc">The Faber clothbound poets — Larkin, Hughes, Plath, Heaney — are beautifully produced at a sensible price. These are books you can carry without anxiety and lend without regret.</p>
+        <p class="item-price">£14 — £18</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
+      <p class="footer-tagline">Pointless meanderings</p>
+      <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the curiosities of life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Tj</a></li>
+        <li><a href="/journal/">Journal</a></li>
+        <li><a href="/books/">Books</a></li>
+        <li><a href="/art/">Art</a></li>
+        <li><a href="/items/">The Emporium</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Goodreads</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Tj's Miscellany &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Made with intention
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
