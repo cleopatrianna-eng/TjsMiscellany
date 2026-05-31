@@ -1,0 +1,26 @@
+{
+  "name": "tjsmiscellany",
+  "version": "1.0.0",
+  "description": "1. Log in to https://dash.cloudflare.com\r 2. Go to **Workers & Pages** → **Create application** → **Pages** → **Upload assets**\r 3. Create a new project named `tjs-miscellany`\r 4. Drag and drop the entire `tjs-miscellany` folder (or zip it first)\r 5. Click **Deploy site**",
+  "main": "js/main.js",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleopatrianna-eng/TjsMiscellany.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cleopatrianna-eng/TjsMiscellany/issues"
+  },
+  "homepage": "https://github.com/cleopatrianna-eng/TjsMiscellany#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

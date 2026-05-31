@@ -27,19 +27,29 @@ After deployment, add your custom domain under:
 
 ```
 tjs-miscellany/
-├── index.html          ← Homepage
-├── about.html          ← About Tj
-├── blog.html           ← Journal / Essays
-├── book-reviews.html   ← Book Reviews
-├── art-reviews.html    ← Art Reviews
-├── items.html          ← The Emporium (curated items)
+├── .eleventy.js          ← Eleventy configuration
+├── package.json          ← npm package metadata
+├── src/                  ← all your content goes in here
+│   ├── _includes/        ← layouts and templates
+│   │   └── base.njk      ← your main page template
+│   ├── posts/            ← blog posts go here
+│   ├── reviews/          ← reviews go here
+│   │   ├── books/
+│   │   └── art/
+│   ├── index.njk         ← homepage
+│   ├── about.njk
+│   ├── blog.njk
+│   ├── book-reviews.njk
+│   ├── art-reviews.njk
+│   └── items.njk
 ├── css/
-│   └── style.css       ← All styles (Art Nouveau theme)
+│   └── style.css
 ├── js/
-│   └── main.js         ← Scroll reveal, filter buttons, active nav
-├── _redirects          ← Cloudflare Pages URL redirects
-└── _headers            ← Security & cache headers
+│   ├── components.js
+│   └── main.js
+└── images/
 ```
+
 
 ## Replacing Placeholder Images
 Images use `https://picsum.photos` for placeholders. To replace:

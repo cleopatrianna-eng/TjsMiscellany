@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Tj's Miscellany</title>
+  <meta name="description" content="{{ description or 'An independent online magazine devoted to literature, the visual arts, and the curiosities of life.' }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
+    <h1 class="masthead-title">
+      <a href="/" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
+    </h1>
+    <p class="masthead-subtitle">Endless distractions and procrastinations</p>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+    <span class="nav-sep">✦</span>
+    <a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a>
+    <span class="nav-sep">✦</span>
+    <a href="/blog/" {% if page.url == "/blog/" %}class="active"{% endif %}>Journal</a>
+    <span class="nav-sep">✦</span>
+    <a href="/book-reviews/" {% if page.url == "/book-reviews/" %}class="active"{% endif %}>Books</a>
+    <span class="nav-sep">✦</span>
+    <a href="/art-reviews/" {% if page.url == "/art-reviews/" %}class="active"{% endif %}>Art</a>
+    <span class="nav-sep">✦</span>
+    <a href="/items/" {% if page.url == "/items/" %}class="active"{% endif %}>The Emporium</a>
+  </div>
+</nav>
+
+<main>
+  {{ content | safe }}
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
+      <p class="footer-tagline">A Cabinet of Curious Enthusiasms</p>
+      <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the curiosities of life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Tj</a></li>
+        <li><a href="/blog/">Journal</a></li>
+        <li><a href="/book-reviews/">Books</a></li>
+        <li><a href="/art-reviews/">Art</a></li>
+        <li><a href="/items/">The Emporium</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Goodreads</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Tj's Miscellany &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Made with intention
+  </div>
+</footer>
+
+<script src="/js/components.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

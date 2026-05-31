@@ -1,1 +1,1 @@
-# images
+Placeholder for original image assets.

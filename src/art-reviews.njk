@@ -1,0 +1,78 @@
+---
+title: Art Reviews
+description: Gallery visits, exhibition reviews, and art writing from Tj's Miscellany.
+layout: base.njk
+permalink: /art-reviews/
+---
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Visual Arts</p>
+    <h1>Art Reviews</h1>
+    <p>On paintings, exhibitions, illustrations, and staying awed</p>
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <div style="text-align:center;padding:2rem 0 0.5rem;font-family:'IM Fell English',serif;font-style:italic;color:var(--ink-soft);font-size:1.05rem;max-width:600px;margin:0 auto;">
+    Art that I just like.
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="exhibition">Exhibitions</button>
+    <button class="filter-btn" data-filter="illustration">Illustration</button>
+    <button class="filter-btn" data-filter="painting">Painting</button>
+    <button class="filter-btn" data-filter="craft">Craft & Design</button>
+  </div>
+
+  <div style="margin:2.5rem 0;background:var(--cream);border:1px solid var(--gold-pale);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;" class="card" data-category="illustration">
+    <div style="height:100%;min-height:320px;overflow:hidden;background:var(--mist);">
+      <img src="/images/cat-painting-amsterdam.jpg" alt="Featured art review" style="width:100%;height:100%;object-fit:cover;filter:sepia(20%);display:block;">
+    </div>
+    <div style="padding:3rem;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">✦ Featured Review · Illustration</p>
+      <h2 style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;color:var(--forest-deep);line-height:1.3;margin-bottom:0.5rem;letter-spacing:0.03em;">Comedy in old paintings</h2>
+      <p style="font-family:'IM Fell English',serif;font-style:italic;color:var(--gold);font-size:0.95rem;margin-bottom:1.25rem;">Survey Exhibition · Various Venues</p>
+      <p style="font-size:1rem;color:var(--ink-soft);line-height:1.8;margin-bottom:1.5rem;">Why great art can also be utterly hilarious</p>
+      <a href="#" class="card-link">Read in Full →</a>
+    </div>
+  </div>
+
+  <div class="review-layout">
+
+    <article class="review-card" data-category="exhibition">
+      <div class="review-image">
+        <img src="/images/hokusai-great-wave.jpg">
+      </div>
+      <div class="review-body">
+        <div class="review-meta">
+          <span class="review-type">Exhibition</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <h3 class="review-title">Beneath the Great Wave</h3>
+        <p class="review-author">Whitworth Gallery, Manchester</p>
+        <p class="review-excerpt">Glorious collection of wood block prints and books from Japanese art history.</p>
+        <div class="review-verdict">Beautiful exhibit with wonderful pieces.</div>
+      </div>
+    </article>
+
+    <article class="review-card" data-category="craft">
+      <div class="review-image">
+        <img src="https://picsum.photos/seed/art3/600/400" alt="William Morris">
+      </div>
+      <div class="review-body">
+        <div class="review-meta">
+          <span class="review-type">Craft & Design</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <h3 class="review-title">William Morris: Anarchy and Beauty</h3>
+        <p class="review-author">V&A Museum</p>
+        <p class="review-excerpt">The great pleasure of this exhibition is its insistence on holding both sides of Morris together: the luxury wallpapers and the revolutionary politics, the exquisite handcraft and the rage at industrial capitalism. He is richer, and stranger, than either camp usually acknowledges.</p>
+        <div class="review-verdict">Superb. The permanent collection has never seemed so important.</div>
+      </div>
+    </article>
+
+  </div>
+</div>
