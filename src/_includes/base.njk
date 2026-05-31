@@ -1,12 +1,16 @@
-Looking at your code, the main issue is the rootRelative path calculation logic — it's using Nunjucks syntax but the split/length filter chain isn't quite right for Eleventy. Here's the cleaned-up version:
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} — Tj's Miscellany</title>
   <meta name="description" content="{{ description or 'An independent online magazine devoted to literature, the visual arts, and the curiosities of life.' }}">
-  <link rel="stylesheet" href="/css/style.css">
+{% set pageDepth = (page.url | split('/') | length) - 2 %}
+{% set rootRelative = '' %}
+{% for i in range(pageDepth) %}
+  {% set rootRelative = rootRelative + '../' %}
+{% endfor %}
+  <link rel="stylesheet" href="{{ rootRelative }}css/style.css">
 </head>
 <body>
 
@@ -14,7 +18,7 @@ html<!DOCTYPE html>
   <div class="masthead-inner">
     <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
     <h1 class="masthead-title">
-      <a href="/" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
+      <a href="{{ rootRelative }}" style="text-decoration:none;color:inherit;">Tj's Miscellany</a>
     </h1>
     <p class="masthead-subtitle">Endless distractions and procrastinations</p>
   </div>
@@ -22,17 +26,15 @@ html<!DOCTYPE html>
 
 <nav class="main-nav">
   <div class="nav-inner">
-    <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+    <a href="{{ rootRelative }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
     <span class="nav-sep">✦</span>
-    <a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a>
+    <a href="{{ rootRelative }}about/" {% if page.url == "/about/" %}class="active"{% endif %}>About</a>
     <span class="nav-sep">✦</span>
-    <a href="/journal/" {% if page.url == "/journal/" %}class="active"{% endif %}>Journal</a>
+    <a href="{{ rootRelative }}books/" {% if page.url == "/books/" %}class="active"{% endif %}>Books</a>
     <span class="nav-sep">✦</span>
-    <a href="/books/" {% if page.url == "/books/" %}class="active"{% endif %}>Books</a>
+    <a href="{{ rootRelative }}art/" {% if page.url == "/art/" %}class="active"{% endif %}>Art</a>
     <span class="nav-sep">✦</span>
-    <a href="/art/" {% if page.url == "/art/" %}class="active"{% endif %}>Art</a>
-    <span class="nav-sep">✦</span>
-    <a href="/items/" {% if page.url == "/items/" %}class="active"{% endif %}>The Emporium</a>
+    <a href="{{ rootRelative }}items/" {% if page.url == "/items/" %}class="active"{% endif %}>The Emporium</a>
   </div>
 </nav>
 
@@ -50,12 +52,11 @@ html<!DOCTYPE html>
     <div class="footer-col">
       <h4>Navigate</h4>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About Tj</a></li>
-        <li><a href="/journal/">Journal</a></li>
-        <li><a href="/books/">Books</a></li>
-        <li><a href="/art/">Art</a></li>
-        <li><a href="/items/">The Emporium</a></li>
+        <li><a href="{{ rootRelative }}">Home</a></li>
+        <li><a href="{{ rootRelative }}about/">About Tj</a></li>
+        <li><a href="{{ rootRelative }}books/">Books</a></li>
+        <li><a href="{{ rootRelative }}art/">Art</a></li>
+        <li><a href="{{ rootRelative }}items/">The Emporium</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -73,6 +74,7 @@ html<!DOCTYPE html>
   </div>
 </footer>
 
-<script src="/js/main.js"></script>
+
+<script src="{{ rootRelative }}js/main.js"></script>
 </body>
 </html>
