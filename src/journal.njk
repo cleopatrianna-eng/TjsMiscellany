@@ -21,7 +21,7 @@ permalink: /journal/
         <span class="card-tag">{{ post.data.category }}</span>
       </div>
       <div class="card-body">
-        <p class="card-date">{{ post.date | date: "%d %B %Y" }}</p>
+        <p class="card-date">{{ post.date | date: ("%d %B %Y") }}</p>
         <h3 class="card-title">{{ post.data.title }}</h3>
         <p class="card-excerpt">{{ post.data.excerpt }}</p>
         <a href="{{ post.url }}" class="card-link">Continue Reading →</a>
