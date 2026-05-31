@@ -1,0 +1,76 @@
+// Shared masthead + nav + footer injected by components.js
+(function () {
+  const masthead = `
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="masthead-ornament">Est. MMXXIV &nbsp;·&nbsp; London</span>
+      <h1 class="masthead-title"><a href="index.html" style="text-decoration:none;color:inherit;">Tj's Miscellany</a></h1>
+      <p class="masthead-subtitle">A Cabinet of Curious Enthusiasms</p>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <span class="nav-sep">✦</span>
+      <a href="about.html">About</a>
+      <span class="nav-sep">✦</span>
+      <a href="blog.html">Journal</a>
+      <span class="nav-sep">✦</span>
+      <a href="book-reviews.html">Book Reviews</a>
+      <span class="nav-sep">✦</span>
+      <a href="art-reviews.html">Art Reviews</a>
+      <span class="nav-sep">✦</span>
+      <a href="items.html">The Emporium</a>
+    </div>
+  </nav>`;
+
+  const footer = `
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
+        <p class="footer-tagline">A Cabinet of Curious Enthusiasms</p>
+        <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the finer curiosities of life. Written with care, published with pleasure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Tj</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="book-reviews.html">Book Reviews</a></li>
+          <li><a href="art-reviews.html">Art Reviews</a></li>
+          <li><a href="items.html">The Emporium</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Goodreads</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Tj's Miscellany &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Made with intention
+    </div>
+  </footer>`;
+
+  // Inject masthead before <main>
+  const main = document.querySelector('main');
+  if (main) {
+    main.insertAdjacentHTML('beforebegin', masthead);
+    document.body.insertAdjacentHTML('beforeend', footer);
+  }
+
+  // Active nav
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.nav-inner a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+      if (link.getAttribute('href') === current) link.classList.add('active');
+    });
+  });
+})();
