@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Spectral:wght@400;700&family=IM+Fell+English:ital@0;1&family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&family=IM+Fell+English:ital@0;1&family=Raleway:wght@300;400;500&display=swap');
 
 :root {
   --ivory: #f5f5f0;
@@ -24,7 +24,7 @@ html { font-size: 16px; scroll-behavior: smooth; }
 body {
   background-color: var(--ivory);
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.15rem;
   line-height: 1.7;
   min-height: 100vh;
@@ -128,7 +128,7 @@ body::before {
 
 /* ── NAVIGATION ── */
 .main-nav {
-  background: var(--forest);
+  background: var(--forest-deep);
   border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
@@ -712,7 +712,7 @@ body::before {
 }
 
 .item-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.3rem;
   color: var(--forest);
   font-weight: 600;
@@ -889,7 +889,7 @@ footer::before {
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  background: var(--forest-deep);
+  background: var(--ivory);
   padding: 5rem 0;
   text-align: center;
   position: relative;
@@ -908,7 +908,7 @@ footer::before {
 .page-hero h1 {
   font-family: 'Spectral', serif;
   font-size: clamp(1.8rem, 5vw, 3.5rem);
-  color: var(--gold-light);
+  color: var(--ink);
   letter-spacing: 0.1em;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -917,7 +917,7 @@ footer::before {
 .page-hero p {
   font-family: 'IM Fell English', serif;
   font-style: italic;
-  color: var(--gold-pale);
+  color: var(--ink);
   font-size: 1.1rem;
   opacity: 0.8;
 }
@@ -949,7 +949,7 @@ footer::before {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   background: transparent;
-  border: 1px solid var(--gold-pale);
+  border: 1px solid var(--Forest);
   color: var(--ink-soft);
   padding: 0.6rem 1.5rem;
   cursor: pointer;
@@ -1013,5 +1013,3 @@ footer::before {
   .interests-grid { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: 1fr; }
 }
-
-

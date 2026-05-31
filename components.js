@@ -10,17 +10,17 @@
   </header>
   <nav class="main-nav">
     <div class="nav-inner">
-      <a href="index.html">Home</a>
+      <a href="/index.html">Home</a>
       <span class="nav-sep">✦</span>
-      <a href="about.html">About</a>
+      <a href="/about.html">About</a>
       <span class="nav-sep">✦</span>
-      <a href="blog.html">Journal</a>
+      <a href="/Journal.html">Journal</a>
       <span class="nav-sep">✦</span>
-      <a href="book-reviews.html">Book Reviews</a>
+      <a href="/Books.html">Books</a>
       <span class="nav-sep">✦</span>
-      <a href="art-reviews.html">Art Reviews</a>
+      <a href="/Art.html">Art</a>
       <span class="nav-sep">✦</span>
-      <a href="items.html">The Emporium</a>
+      <a href="/items.html">The Emporium</a>
     </div>
   </nav>`;
 
@@ -35,12 +35,12 @@
       <div class="footer-col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Tj</a></li>
-          <li><a href="blog.html">Journal</a></li>
-          <li><a href="book-reviews.html">Book Reviews</a></li>
-          <li><a href="art-reviews.html">Art Reviews</a></li>
-          <li><a href="items.html">The Emporium</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Tj</a></li>
+          <li><a href="/Journal.html">Journal</a></li>
+          <li><a href="/Books.html">Books</a></li>
+          <li><a href="/Art.html">Art</a></li>
+          <li><a href="/items.html">The Emporium</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -58,19 +58,17 @@
     </div>
   </footer>`;
 
-  // Inject masthead before <main>
-  const main = document.querySelector('main');
-  if (main) {
-    main.insertAdjacentHTML('beforebegin', masthead);
-    document.body.insertAdjacentHTML('beforeend', footer);
-  }
+  // Inject header and footer
+  document.getElementById('site-header').innerHTML = masthead;
+  document.getElementById('site-footer').innerHTML = footer;
 
-  // Active nav
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.nav-inner a');
-    const current = window.location.pathname.split('/').pop() || 'index.html';
-    links.forEach(link => {
-      if (link.getAttribute('href') === current) link.classList.add('active');
-    });
+  // Highlight active nav link
+  const links = document.querySelectorAll('.nav-inner a');
+  const current = window.location.pathname;
+  links.forEach(link => {
+    if (link.getAttribute('href') === current) {
+      link.classList.add('active');
+    }
   });
+
 })();
