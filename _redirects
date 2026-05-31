@@ -1,10 +1,2 @@
 # Cloudflare Pages redirects
-# Redirect bare domain to index
-/ /index.html 200
-
-# Handle clean URLs (optional - Cloudflare Pages handles .html automatically)
-/about /about.html 200
-/blog /blog.html 200
-/book-reviews /book-reviews.html 200
-/art-reviews /art-reviews.html 200
-/items /items.html 200
+/index /index.html 301
