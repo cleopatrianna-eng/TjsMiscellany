@@ -3,9 +3,9 @@
   const masthead = `
   <header class="masthead">
     <div class="masthead-inner">
-      <span class="masthead-ornament">Est. MMXXIV &nbsp;·&nbsp; London</span>
+      <span class="masthead-ornament">Est. 2026 &nbsp;·&nbsp; Manchester</span>
       <h1 class="masthead-title"><a href="index.html" style="text-decoration:none;color:inherit;">Tj's Miscellany</a></h1>
-      <p class="masthead-subtitle">A Cabinet of Curious Enthusiasms</p>
+      <p class="masthead-subtitle">Endless distractions and procrastinations</p>
     </div>
   </header>
   <nav class="main-nav">
@@ -30,7 +30,7 @@
       <div class="footer-brand">
         <div class="masthead-title" style="font-size:1.4rem;margin-bottom:0.5rem;">Tj's Miscellany</div>
         <p class="footer-tagline">A Cabinet of Curious Enthusiasms</p>
-        <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the finer curiosities of life. Written with care, published with pleasure.</p>
+        <p class="footer-copy">An independent online magazine devoted to literature, the visual arts, and the curiosities of life.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
